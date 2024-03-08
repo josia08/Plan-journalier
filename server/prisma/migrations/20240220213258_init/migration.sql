@@ -1,0 +1,31 @@
+-- CreateTable
+CREATE TABLE "Chapter" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "status" BOOLEAN NOT NULL DEFAULT true,
+    "date" TEXT NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Plan" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "title" TEXT NOT NULL,
+    "chapterId" INTEGER NOT NULL,
+    CONSTRAINT "Plan_chapterId_fkey" FOREIGN KEY ("chapterId") REFERENCES "Chapter" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Notes" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "note" TEXT NOT NULL,
+    "chapterId" INTEGER NOT NULL,
+    CONSTRAINT "Notes_chapterId_fkey" FOREIGN KEY ("chapterId") REFERENCES "Chapter" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "items" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "item" TEXT NOT NULL,
+    "planId" INTEGER NOT NULL,
+    CONSTRAINT "items_planId_fkey" FOREIGN KEY ("planId") REFERENCES "Plan" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

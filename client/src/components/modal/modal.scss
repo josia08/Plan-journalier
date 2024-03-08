@@ -1,0 +1,90 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-container {
+	background-color: #fff;
+	padding: 6px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	width: 40%;
+	max-height: 80%;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	.modal-title {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.close {
+		display: flex;
+		justify-content: end;
+	}
+}
+
+.modal-close-button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	font-size: 18px;
+	width: 40px;
+}
+.modal-close-button:hover {
+	background-color: red;
+}
+.modal-content {
+	display: flex;
+	gap: 20px;
+	box-shadow: none;
+	width: 80%;
+	margin: auto;
+
+	.add-input-container{
+		
+	}
+
+	.plus {
+		background-color: #dcdcdc;
+		width: 38px;
+		padding: 5px;
+		text-align: center;
+	}
+	.x{
+		background-color: #eb8282;
+		width: 40px;
+		text-align: center;
+		padding: 5px;
+		margin-bottom: 0;
+		color: #dcdcdc;
+	}
+
+	.input-item {
+		margin-bottom: 2px;
+	}
+}
+
+.modal-submit {
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	right: 3vw;
+	.button-submit {
+		margin: 20% 18px 2% 0;
+	}
+}
+.alert-danger {
+	padding: 5px;
+	border-radius: 3px;
+}
